@@ -1,0 +1,14 @@
+// وظيفة لإضافة تأثير عند التمرير على الصفحة
+window.addEventListener('scroll', function() {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) {
+        nav.style.padding = '10px 8%';
+        nav.style.boxShadow = '0 8px 20px rgba(0,0,0,0.1)';
+    } else {
+        nav.style.padding = '15px 8%';
+        nav.style.boxShadow = '0 4px 10px rgba(0,0,0,0.05)';
+    }
+});
+
+// يمكنك إضافة المزيد من التفاعلات هنا مستقبلاً
+console.log("مرحباً بك في موقع مكتب النسر السريع - تم تحميل الصفحة بنجاح");
