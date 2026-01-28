@@ -4,130 +4,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مكتب النسر السريع | اليمن - صنعاء</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <title>NOVARA PREMIUM | خدمات الشحن واللوجستيات</title>
+    <style>
+        :root {
+            --primary: #003366;
+            --accent: #f4b400;
+            --white: #ffffff;
+            --text: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #f4f4f4;
+        }
+
+        /* ضبط الهيدر ليكون ممتداً ومتناسقاً */
+        header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0 5%;
+            /* مسافة جانبية متوازنة */
+            height: 70px;
+            /* توحيد الارتفاع */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            /* ممتد لكامل العرض */
+            left: 0;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+            /* لضمان عدم خروج العرض عن الشاشة */
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            height: 45px;
+            width: 45px;
+            object-fit: contain;
+            background: white;
+            border-radius: 8px;
+            padding: 2px;
+        }
+
+        .brand-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* القسم الرئيسي */
+        .hero {
+            background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)),
+                url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 0;
+            /* تم الضبط لأن الهيدر مفرغ */
+        }
+
+        .hero-content {
+            padding-top: 70px;
+            /* لتعويض ارتفاع الهيدر */
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-btn {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 12px 35px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .hero-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(244, 180, 0, 0.3);
+        }
+
+        /* الموانئ */
+        .destinations {
+            padding: 5rem 5%;
+            background: var(--white);
+        }
+
+        .dest-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .dest-card {
+            background: #ffffff;
+            border: 1px solid #eee;
+            border-bottom: 5px solid var(--accent);
+            padding: 35px 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.4s;
+        }
+
+        .dest-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 2.5rem;
+        }
+
+        /* تعديلات الموبايل */
+        @media (max-width: 768px) {
+            header {
+                padding: 0 15px;
+            }
+
+            .brand-name {
+                font-size: 1.1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            nav a {
+                font-size: 0.8rem;
+                margin: 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <nav>
-        <a href="#" class="logo">
-            <img src="Screenshot_20260128-005345_Samsung Notes.jpg" alt="شعار النسر السريع"
-                class="logo-img">
-            <div class="logo-text">
-                <h1>النسر السريع</h1>
-                <span>AL-NASR AL-SREEA</span>
-            </div>
-        </a>
-        <div class="nav-links">
-            <a href="#about">من نحن</a>
-            <a href="#services">خدماتنا</a>
-            <a href="#contact">اتصل بنا</a>
+    <header>
+        <div class="logo-container">
+            <img src="logo.jpg" alt="Logo" class="logo-img">
+            <div class="brand-name">NOVARA PREMIUM</div>
         </div>
-    </nav>
+        <nav>
+            <a href="index.html">الرئيسية</a>
+            <a href="textiles.html">كتالوج المنسوجات</a>
+            <a href="#destinations">موانئنا</a>
+        </nav>
+    </header>
 
-    <section id="home" class="hero">
-        <h1>مكتب <span>النسر السريع</span></h1>
-        <p>التميز في التخليص الجمركي والشحن والتوكيلات العامة.</p>
-        <div class="ports-badge">
-            <i class="fas fa-check-circle"></i> تخليص جمركي في جميع المنافذ (بر - بحر - جو)
-        </div>
-        <a href="https://wa.me/967783383842" class="whatsapp-btn">
-            <i class="fab fa-whatsapp"></i> تواصل معنا عبر واتساب
-        </a>
-    </section>
-
-    <section class="stats">
-        <div class="stat-item">
-            <h3>+10</h3>
-            <p>سنوات خبرة</p>
-        </div>
-        <div class="stat-item">
-            <h3>+50k</h3>
-            <p>شحنة منجزة</p>
-        </div>
-        <div class="stat-item">
-            <h3>صنعاء</h3>
-            <p>المقر الرئيسي</p>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>حلول لوجستية ذكية لليمن والخليج</h1>
+            <p>نربط العالم بالموانئ اليمنية بأعلى معايير الأمان والسرعة</p>
+            <br>
+            <a href="textiles.html" class="hero-btn">عرض كتالوج المنتجات</a>
         </div>
     </section>
 
-    <section id="about" class="about">
-        <div class="about-grid">
-            <div class="about-text">
-                <h2>من نحن</h2>
-                <p>مكتب النسر السريع هو شريككم الموثوق في عالم التجارة والخدمات اللوجستية. نتميز بخبرة أكاديمية وميدانية
-                    تضمن سلاسة عبور بضائعكم.</p>
-                <div class="mv-box">
-                    <i class="fas fa-eye"></i>
-                    <h4>رؤيتنا</h4>
-                    <p>الريادة في تقديم الخدمات الجمركية الذكية عبر كافة المنافذ اليمنية بلا استثناء.</p>
-                </div>
+    <section id="destinations" class="destinations">
+        <h2 style="text-align: center; color: var(--primary); margin-bottom: 3rem; font-size: 2.2rem;">وجهاتنا التشغيلية
+            في الموانئ اليمنية</h2>
+        <div class="dest-grid">
+            <div class="dest-card">
+                <h3>ميناء عدن الدولي</h3>
+                <p>المركز الاستراتيجي الرئيسي لخدمات الحاويات والترانزيت في خليج عدن.</p>
             </div>
-            <div class="manager-card">
-                <i class="fas fa-user-tie"></i>
-                <h3>كلمة الإدارة</h3>
-                <p>"نحن هنا لنجعل من عملية الاستيراد والتصدير تجربة سهلة، من خلال تغطيتنا الشاملة لجميع المنافذ البرية
-                    والبحرية والجوية."</p>
-                <p class="manager-name">المدير العام للمكتب - بكالوريوس إدارة أعمال</p>
+            <div class="dest-card">
+                <h3>ميناء الحديدة</h3>
+                <p>البوابة الحيوية لاستقبال المواد الغذائية والسلع التجارية لخدمة الكثافة السكانية.</p>
             </div>
-        </div>
-    </section>
-
-    <section id="services" class="services">
-        <h2 class="section-main-title">خدماتنا</h2>
-        <p class="section-subtitle">نغطي كافة المنافذ (بر - بحر - جو)</p>
-        <div class="title-line"></div>
-
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-ship"></i>
-                <h3>التخليص الجمركي</h3>
-                <p>تخليص كافة أنواع البضائع عبر <strong>الموانئ، المطارات، والمنافذ البرية</strong> اليمنية بدقة وسرعة.
-                </p>
+            <div class="dest-card">
+                <h3>ميناء المكلا</h3>
+                <p>المنفذ البحري الرئيسي لإقليم حضرموت ونقطة الربط مع شرق البلاد.</p>
             </div>
-            <div class="service-card">
-                <i class="fas fa-truck-moving"></i>
-                <h3>الشحن واللوجستيات</h3>
-                <p>توفير أساطيل نقل وحلول شحن متكاملة تربط المنافذ بجميع محافظات الجمهورية.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-file-signature"></i>
-                <h3>التوكيلات العامة</h3>
-                <p>إدارة الوكالات التجارية وتمثيل الشركات قانونياً وإدارياً أمام الجهات المختصة.</p>
+            <div class="dest-card">
+                <h3>ميناء المخاء</h3>
+                <p>الميناء التاريخي الذي يمثل ركيزة في تنشيط التجارة بالبحر الأحمر.</p>
             </div>
         </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="contact-box">
-            <div class="contact-info">
-                <h2>تحدث مع الخبراء</h2>
-                <div class="info-item">
-                    <label>واتساب / اتصال</label>
-                    <a href="tel:+967783383842">967783383842+</a>
-                </div>
-                <div class="info-item">
-                    <label>البريد الإلكتروني</label>
-                    <a href="mailto:Aalnasr834@gmail.com">Aalnasr834@gmail.com</a>
-                </div>
-            </div>
-            <div class="contact-details">
-                <p class="detail-title">نحن بجانبكم دائماً</p>
-                <p>تخليص جمركي شامل في:</p>
-                <p class="detail-icons">✈️ المطارات | 🚢 الموانئ | 🚛 المنافذ البرية</p>
-                <p class="detail-location">الجمهورية اليمنية - صنعاء</p>
-            </div>
+        <div class="company-brief">
+        <h2>عن نوفارا للصادرات (NOVARA PREMIUM)</h2>
+        <p>
+            تعتبر **شركة نوفارا للصادرات** وكالة تجارية متخصصة في دمج موارد الصناعة الصينية وربطها بالمتطلبات
+            المتنامية في الأسواق العربية. نحن نعمل كجسر استراتيجي يضمن تدفق بضائع عالية الجودة مباشرة من
+            المصانع، مع الالتزام برقابة صارمة على الجودة لتقليل المخاطر وحماية استثمارات عملائنا. بفضل شبكتنا
+            التي تضم أكثر من 5000 مورد مؤهل، نقدم حلولاً لوجستية متكاملة لضمان وصول شحناتكم بأمان وكفاءة إلى
+            كافة الموانئ اليمنية والخليجية.
+        </p>
         </div>
     </section>
 
     <footer>
-        <p>جميع الحقوق محفوظة &copy; 2026 مكتب النسر السريع للتخليص الجمركي - صنعاء</p>
+        <p>Copyright &copy; 2026 NOVARA PREMIUM - Logistics & Shipping</p>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVARA PREMIUM | كتالوج المنسوجات</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-box">
+            <img src="logo.jpg">
+            <span class="brand-name">NOVARA PREMIUM</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="mainGrid">
+            <h1 class="main-title">كتالوج منسوجات نوفارا</h1>
+
+            <div class="category-grid">
+                <div class="section-box" onclick="openSect('قسم القبعات Caps', 1.27, 'img_caps')">
+                    <div class="box-brand"><img src="logo.jpg"></div>
+                    <div class="box-content">
+                        <h2>قسم القبعات (Caps)</h2>
+                        <span class="box-price">$1.27 للقطعة</span>
+                    </div>
+                </div>
+
+                <div class="section-box" onclick="openSect('قسم الجوارب القطنية', 0.40, 'img_socks')">
+                    <div class="box-brand"><img src="logo.jpg"></div>
+                    <div class="box-content">
+                        <h2>قسم الجوارب القطنية</h2>
+                        <span class="box-price">$0.40 للقطعة</span>
+                    </div>
+                </div>
+
+                <div class="section-box" onclick="openSect('أطقم أطفال Baby', 0.79, 'img0.79')">
+                    <div class="box-brand"><img src="logo.jpg"></div>
+                    <div class="box-content">
+                        <h2>أطقم مواليد (Baby Sets)</h2>
+                        <span class="box-price">$0.79 للقطعة</span>
+                    </div>
+                </div>
+
+                <div class="section-box" onclick="openSect('تشكيلة نوفارا الفاخرة', 1.70, 'img1.7')">
+                    <div class="box-brand"><img src="logo.jpg"></div>
+                    <div class="box-content">
+                        <h2>موديلات Fashion الراقية</h2>
+                        <span class="box-price">$1.70 للقطعة</span>
+                    </div>
+                </div>
+
+                <div class="section-box" onclick="openSect('القطنيات الاقتصادية', 0.70, 'img0.70')">
+                    <div class="box-brand"><img src="logo.jpg"></div>
+                    <div class="box-content">
+                        <h2>القطنيات الخفيفة</h2>
+                        <span class="box-price">$0.70 للقطعة</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="productView" class="product-view">
+            <div class="product-view-header">
+                <h2 id="sectTitle"></h2>
+                <button class="btn-close" onclick="closeSect()">إغلاق ×</button>
+            </div>
+            <div class="slider" id="productSlider"></div>
+        </div>
+    </div>
+
+    <div class="footer-cart">
+        <div class="total-box">إجمالي الطلب: <span id="totalVal">$0.00</span></div>
+        <button class="btn-send" onclick="sendWhatsApp()">إرسال الطلب (واتساب) 💬</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
